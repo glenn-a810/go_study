@@ -1,12 +1,12 @@
 package main
 
-//import "fmt"
-//
-//func main() {
-//	var a int = 10
-//	var msg string = "변수"
-//
-//	a = 20
-//	msg = "값 변경"
-//	fmt.Println(msg, a)
-//}
+import "fmt"
+
+func main() {
+	var minimumWage int = 10
+	var workingHour int = 20
+
+	var income int = minimumWage * workingHour
+
+	fmt.Println(minimumWage, workingHour, income)
+}
