@@ -3,13 +3,14 @@ package main
 import "fmt"
 
 func main() {
-	var a float32 = 1234.523
-	var b float32 = 3456.123
-	var c float32 = a * b // 4266663.334329 -> float32 7자리 제한에 걸려 4266663으로 출력
-	var d float32 = c * 3 // 12799990.002987 -> float32 7자리 제한에 걸려 12799989로 출력
+	a := 10
+	b := 20
+	f := 32799438743.8297
 
-	fmt.Println(a)
-	fmt.Println(b)
-	fmt.Println(c)
-	fmt.Println(d)
+	fmt.Print("a:", a, "b:", b)               // a:10b:20
+	fmt.Println("a:", a, "b:", b, "f:", f)    // a: 10 b: 20 f: 3.27994387438297e+10->실수값의 기본서식이 %f가 아닌 %g
+	fmt.Printf("a: %d b: %d f:%f\n", a, b, f) // a: 10 b: 20 f: 32799438743.829700
+	//               |----- 출력 서식 -----| |-입력값-|
+	// Printf(서식문자열, 인수1, 인수2, ...)의 형식으로 사용함
+	// 자주 사용하는 %d, %f, %s와 기본서식에 맞춰 출력하는 %v 정도는 알아두자
 }
