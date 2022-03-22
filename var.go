@@ -1,30 +1,20 @@
 package main
 
-import (
-	"bufio" // io를 담당하는 패키지
-	"fmt"
-	"os" // 표준 입출력 등을 가지고 있는 패키지
-)
+import "fmt"
 
 func main() {
-	stdin := bufio.NewReader(os.Stdin) // 표준 입력을 읽는 객체
+	var x int32 = 7
+	var y int32 = 3
 
-	var a int
-	var b int
+	var s float32 = 3.14
+	var t float32 = 5
 
-	n, err := fmt.Scanln(&a, &b)
+	fmt.Println("x + y = ", x+y)
+	fmt.Println("x - y = ", x-y)
+	fmt.Println("x * y = ", x*y)
+	fmt.Println("x / y = ", x/y)
+	fmt.Println("x % y = ", x%y)
 
-	if err != nil {
-		fmt.Println(err)
-		stdin.ReadString('\n') // 표준 입력 스트림 지우기
-	} else {
-		fmt.Println(n, a, b)
-	}
-
-	n, err = fmt.Scanln(&a, &b) // 다시 입력받기
-	if err != nil {
-		fmt.Println(err)
-	} else {
-		fmt.Println(n, a, b)
-	}
+	fmt.Println("s * t = ", s*t)
+	fmt.Println("s / t = ", s/t)
 }
