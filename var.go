@@ -1,23 +1,30 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
-const epsilon = 0.000001
+//const epsilon = 0.000001
+//
+//func equal(a, b float64) bool {
+//	if a > b {
+//		if a-b <= epsilon {
+//			return true
+//		} else {
+//			return false
+//		}
+//	} else {
+//		if b-a <= epsilon {
+//			return true
+//		} else {
+//			return false
+//		}
+//	}
+//}
 
 func equal(a, b float64) bool {
-	if a > b {
-		if a-b <= epsilon {
-			return true
-		} else {
-			return false
-		}
-	} else {
-		if b-a <= epsilon {
-			return true
-		} else {
-			return false
-		}
-	}
+	return math.Nextafter(a, b) == b
 }
 
 func main() {
