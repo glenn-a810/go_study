@@ -3,13 +3,16 @@ package main
 import "fmt"
 
 func main() {
-	var x int8 = 16   // 부호 있는 정수, 부호 비트값이 0인 수
-	var y int8 = -128 // 부호 있는 정수, 부호 비트값이 1인 수
-	var z int8 = -1   // 모든 비트값이 1인 정수
-	var w uint8 = 128 // 부호 없는 정수, 최상위 비트값이 1인 정수
+	var x int8 = 127 // 8bit 부호가 있는 정수 최대값
 
-	fmt.Printf("x:%08b x>>2: %08b x>>2: %d\n", x, x>>2, x>>2)
-	fmt.Printf("y:%08b y>>2: %08b y>>2: %d\n", uint8(y), uint8(y>>2), y>>2)
-	fmt.Printf("z:%08b z>>2, %08b z>>2, %d\n", uint8(z), uint8(z>>2), z>>2)
-	fmt.Printf("w:%08b w>>2: %08b w>>2: %d\n", uint8(w), uint8(w>>2), w>>2)
+	fmt.Printf("%d < %d + 1: %v\n", x, x, x < x+1)
+	fmt.Printf("x\t= %4d, %08b\n", x, x)
+	fmt.Printf("x + 1\t= %4d, %08b\n", x+1, x+1)
+	fmt.Printf("x + 2\t= %4d, %08b\n", x+2, x+2)
+	fmt.Printf("x + 3\t= %4d, %08b\n", x+3, x+3)
+
+	var y int8 = -128 // 8bit 부호가 있는 정수 최소값
+	fmt.Printf("%d > %d -1: %v\n", y, y, y > y-1)
+	fmt.Printf("y\t= %4d, %08b\n", y, y)
+	fmt.Printf("y - 1\t= %4d, %08b\n", y-1, y-1)
 }
