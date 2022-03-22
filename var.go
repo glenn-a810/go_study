@@ -1,16 +1,12 @@
 package main
 
-import (
-	"fmt"
-	"math/big"
-)
+import "fmt"
 
 func main() {
-	a, _ := new(big.Float).SetString("0.1")
-	b, _ := new(big.Float).SetString("0.2")
-	c, _ := new(big.Float).SetString("0.3")
+	a := 10
+	b := 20
 
-	d := new(big.Float).Add(a, b)
-	fmt.Println(a, b, c, d)
-	fmt.Println(c.Cmp(d))
+	a, b = b, a
+
+	fmt.Println(a, b)
 }
