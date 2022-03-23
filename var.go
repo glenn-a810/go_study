@@ -2,11 +2,17 @@ package main
 
 import "fmt"
 
-func Divide(a, b int) (int, bool) {
+func Divide(a, b int) (result int, success bool) {
 	if b == 0 {
-		return 0, false
+		//return 0, false
+		result = 0
+		success = false
+		return
 	} else {
-		return a / b, true
+		//return a / b, true
+		result = a / b
+		success = true
+		return
 	}
 }
 
