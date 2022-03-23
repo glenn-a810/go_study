@@ -2,15 +2,11 @@ package main
 
 import "fmt"
 
-func printNo(n int) {
-	if n == 0 {
-		return
-	}
-	fmt.Println(n)
-	printNo(n - 1)
-	fmt.Println("After", n)
+func Multiple(a int, b int) int {
+	return a * b
 }
 
 func main() {
-	printNo(3)
+	c := Multiple(2, 3)
+	fmt.Println(c)
 }
