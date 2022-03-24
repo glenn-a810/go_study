@@ -2,13 +2,24 @@ package main
 
 import "fmt"
 
+const Pig int = 0
+const Cow int = 1
+const Chicken int = 2
+
+func PrintAnimal(animal int) {
+	if animal == Pig {
+		fmt.Println("꿀꿀")
+	} else if animal == Cow {
+		fmt.Println("음무")
+	} else if animal == Chicken {
+		fmt.Println("꼬꼬")
+	} else {
+		fmt.Println("...")
+	}
+}
+
 func main() {
-	const PI1 float64 = 3.141592653589793238
-	var PI2 float64 = 3.141592653589793238
-
-	//PI1 = 4
-	PI2 = 4
-
-	fmt.Printf("원주율: %f\n", PI1)
-	fmt.Printf("원주율: %f\n", PI2)
+	PrintAnimal(Pig)
+	PrintAnimal(Cow)
+	PrintAnimal(Chicken)
 }
