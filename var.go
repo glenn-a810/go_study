@@ -2,11 +2,10 @@ package main
 
 import "fmt"
 
-func Multiple(a int, b int) int {
-	return a * b
-}
-
 func main() {
-	c := Multiple(2, 3)
-	fmt.Println(c)
+	const C int = 10 // 상수 선언
+
+	var b int = C * 20
+	C = 20          // 에러 - 상수는 대입문 좌변에 올 수 없음
+	fmt.Println(&C) // 상수 C 주소출력
 }
