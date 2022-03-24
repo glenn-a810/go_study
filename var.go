@@ -3,9 +3,12 @@ package main
 import "fmt"
 
 func main() {
-	const C int = 10 // 상수 선언
+	const PI1 float64 = 3.141592653589793238
+	var PI2 float64 = 3.141592653589793238
 
-	var b int = C * 20
-	C = 20          // 에러 - 상수는 대입문 좌변에 올 수 없음
-	fmt.Println(&C) // 상수 C 주소출력
+	//PI1 = 4
+	PI2 = 4
+
+	fmt.Printf("원주율: %f\n", PI1)
+	fmt.Printf("원주율: %f\n", PI2)
 }
