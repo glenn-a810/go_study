@@ -2,24 +2,13 @@ package main
 
 import "fmt"
 
-const Pig int = 0
-const Cow int = 1
-const Chicken int = 2
-
-func PrintAnimal(animal int) {
-	if animal == Pig {
-		fmt.Println("꿀꿀")
-	} else if animal == Cow {
-		fmt.Println("음무")
-	} else if animal == Chicken {
-		fmt.Println("꼬꼬")
-	} else {
-		fmt.Println("...")
-	}
-}
+const PI = 3.14              // 타입 없는 상수
+const FloatPI float64 = 3.14 // float64 타입 상수
 
 func main() {
-	PrintAnimal(Pig)
-	PrintAnimal(Cow)
-	PrintAnimal(Chicken)
+	var a int = PI * 100
+	var b int = FloatPI * 100 // 타입 에러
+
+	fmt.Println(a)
+	fmt.Println(b)
 }
