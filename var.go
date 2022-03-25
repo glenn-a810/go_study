@@ -2,20 +2,32 @@ package main
 
 import "fmt"
 
-var cnt int = 0
+//var price int
 
-func IncreaseAndReturn() int {
-	fmt.Println("IncreaseAndReturn()", cnt)
-	cnt++
-	return cnt
+func HasRichFriend() bool {
+	return true
+}
+
+func FriendCount() int {
+	return 3
 }
 
 func main() {
-	if false && IncreaseAndReturn() < 5 { // && 좌변이 false면 우변처리않고 false처리
-		fmt.Println("1증가")
+	price := 35000
+
+	if price > 50000 {
+		if HasRichFriend() {
+			fmt.Println("신발끈을 묶는다")
+		} else {
+			fmt.Println("돈을 나눠낸다")
+		}
+	} else if price >= 30000 && price <= 50000 {
+		if FriendCount() > 3 {
+			fmt.Println("신발끈을 묶는다")
+		} else if FriendCount() <= 3 {
+			fmt.Println("돈을 나눠낸다")
+		}
+	} else if price < 30000 {
+		fmt.Println("내가 낸다")
 	}
-	if true || IncreaseAndReturn() < 5 { // || 좌변이 true면 우변처리않고 true처리
-		fmt.Println("2증가")
-	}
-	fmt.Println("cnt:", cnt)
 }
