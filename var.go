@@ -2,14 +2,20 @@ package main
 
 import "fmt"
 
-func main() {
-	var age = 22
+var cnt int = 0
 
-	if age >= 10 && age <= 15 {
-		fmt.Println("어리구만")
-	} else if age > 30 || age < 20 {
-		fmt.Println("20대는 아니네")
-	} else {
-		fmt.Println("늘금")
+func IncreaseAndReturn() int {
+	fmt.Println("IncreaseAndReturn()", cnt)
+	cnt++
+	return cnt
+}
+
+func main() {
+	if false && IncreaseAndReturn() < 5 { // && 좌변이 false면 우변처리않고 false처리
+		fmt.Println("1증가")
 	}
+	if true || IncreaseAndReturn() < 5 { // || 좌변이 true면 우변처리않고 true처리
+		fmt.Println("2증가")
+	}
+	fmt.Println("cnt:", cnt)
 }
