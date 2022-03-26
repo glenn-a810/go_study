@@ -2,19 +2,35 @@ package main
 
 import "fmt"
 
-func getMyAge() int {
-	return 22
+type ColorType int // 별칭 ColorType을 선언하고 const 열거값 정의
+
+const (
+	Red ColorType = iota
+	Blue
+	Green
+	Yellow
+)
+
+// 각 ColorType 열거값에 따른 문자열 반환
+func colorToString(color ColorType) string {
+	switch color {
+	case Red:
+		return "Red"
+	case Blue:
+		return "Blue"
+	case Green:
+		return "Green"
+	case Yellow:
+		return "Yellow"
+	default:
+		return "Undefined"
+	}
+}
+
+func getMyFavoriteColor() ColorType {
+	return Blue
 }
 
 func main() {
-	switch age := getMyAge(); true {
-	case age < 10:
-		fmt.Println("Child")
-	case age < 20:
-		fmt.Println("Teenager")
-	case age < 30:
-		fmt.Println("20s")
-	default:
-		fmt.Println("My age is", age)
-	}
+	fmt.Println("My favorite color is", colorToString(getMyFavoriteColor()))
 }
