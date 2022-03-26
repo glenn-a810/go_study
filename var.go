@@ -2,18 +2,19 @@ package main
 
 import "fmt"
 
-func main() {
-	temp := 18
+func getMyAge() int {
+	return 22
+}
 
-	switch true {
-	case temp < 10, temp > 30:
-		fmt.Println("바깥 활동하기 좋은 날씨가 아닙니다.")
-	case temp >= 10 && temp < 20:
-		fmt.Println("약간 추울 수 있으니 가벼운 겉옷을 준비하세요.")
-		// 이미 두번째 case를 실행했기 때문에 아래는 검사하지 않음
-	case temp >= 15 && temp < 25:
-		fmt.Println("야외 활동하기 좋은 날씨입니다.")
+func main() {
+	switch age := getMyAge(); age {
+	case 10:
+		fmt.Println("Teenage")
+	case 33:
+		fmt.Println("Pair 3")
 	default:
-		fmt.Println("따뜻합니다.")
+		fmt.Println("My age is", age)
 	}
+
+	fmt.Println("age is ", age) // ERROR : age 변수는 조건문 안에서만 사용가능
 }
