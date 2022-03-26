@@ -2,25 +2,49 @@ package main
 
 import "fmt"
 
-func main() {
-	a := 3
+type Direction int
 
-	switch a {
-	case 1:
-		fmt.Println("a == 1")
-		break
-	case 2:
-		fmt.Println("a == 2")
-		break
-	case 3:
-		fmt.Println("a == 3")
-		fallthrough
-	case 4:
-		fmt.Println("a == 4")
-		fallthrough
-	case 5:
-		fmt.Println("a == 5")
+const (
+	None Direction = iota
+	North
+	East
+	South
+	West
+)
+
+func DirectionToString(d Direction) string {
+	switch d {
+	case North:
+		return "North"
+	case East:
+		return "East"
+	case South:
+		return "South"
+	case West:
+		return "West"
 	default:
-		fmt.Println("a > 5")
+		return "None"
 	}
+}
+
+func GetDirection(angle float64) Direction {
+	switch {
+	case angle >= 315, angle >= 0 && angle < 45:
+		return North
+	case angle >= 45 && angle < 135:
+		return East
+	case angle >= 135 && angle < 225:
+		return South
+	case angle >= 225 && angle < 315:
+		return West
+	default:
+		return None
+	}
+}
+
+func main() {
+	fmt.Println(DirectionToString(GetDirection(38.3)))
+	fmt.Println(DirectionToString(GetDirection(235.8)))
+	fmt.Println(DirectionToString(GetDirection(94.2)))
+	fmt.Println(DirectionToString(GetDirection(-30)))
 }
