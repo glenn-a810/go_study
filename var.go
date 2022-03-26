@@ -7,14 +7,14 @@ func getMyAge() int {
 }
 
 func main() {
-	switch age := getMyAge(); age {
-	case 10:
-		fmt.Println("Teenage")
-	case 33:
-		fmt.Println("Pair 3")
+	switch age := getMyAge(); true {
+	case age < 10:
+		fmt.Println("Child")
+	case age < 20:
+		fmt.Println("Teenager")
+	case age < 30:
+		fmt.Println("20s")
 	default:
 		fmt.Println("My age is", age)
 	}
-
-	fmt.Println("age is ", age) // ERROR : age 변수는 조건문 안에서만 사용가능
 }
