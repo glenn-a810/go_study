@@ -3,7 +3,10 @@ package main
 import "fmt"
 
 func main() {
-	for i := 1; i < 10; i += 2 {
-		fmt.Println(i, "*", i, "=", i*i)
+	for i := 5; i > 0; i-- {
+		for j := 1; j <= i; j++ {
+			fmt.Print("*")
+		}
+		fmt.Println()
 	}
 }
