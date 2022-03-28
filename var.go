@@ -3,11 +3,9 @@ package main
 import "fmt"
 
 func main() {
-	nums := [...]int{10, 20, 30, 40, 50}
+	var t [5]float64 = [5]float64{24.0, 25.9, 27.8, 26.9, 26.2}
 
-	nums[2] = 300
-
-	for i := 0; i < len(nums); i++ {
-		fmt.Println(nums[i])
+	for i, v := range t {
+		fmt.Println(i, v)
 	}
 }
