@@ -3,9 +3,22 @@ package main
 import "fmt"
 
 func main() {
-	var t [5]float64 = [5]float64{24.0, 25.9, 27.8, 26.9, 26.2}
+	a := [5]int{1, 2, 3, 4, 5}
+	b := [5]int{500, 400, 300, 200, 100}
 
-	for i, v := range t {
-		fmt.Println(i, v)
+	for i, v := range a {
+		fmt.Printf("a[%d] = %d\n", i, v)
+	}
+
+	fmt.Println()
+	for i, v := range b {
+		fmt.Printf("b[%d] = %d\n", i, v)
+	}
+
+	b = a
+
+	fmt.Println()
+	for i, v := range b {
+		fmt.Printf("b[%d] = %d\n", i, v)
 	}
 }
