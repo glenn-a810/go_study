@@ -3,22 +3,15 @@ package main
 import "fmt"
 
 func main() {
-	a := [5]int{1, 2, 3, 4, 5}
-	b := [5]int{500, 400, 300, 200, 100}
-
-	for i, v := range a {
-		fmt.Printf("a[%d] = %d\n", i, v)
+	a := [2][5]int{
+		{1, 2, 3, 4, 5},
+		{5, 6, 7, 8, 9},
 	}
 
-	fmt.Println()
-	for i, v := range b {
-		fmt.Printf("b[%d] = %d\n", i, v)
-	}
-
-	b = a
-
-	fmt.Println()
-	for i, v := range b {
-		fmt.Printf("b[%d] = %d\n", i, v)
+	for _, arr := range a {
+		for _, v := range arr {
+			fmt.Print(v, " ")
+		}
+		fmt.Println()
 	}
 }
