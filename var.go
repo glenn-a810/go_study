@@ -3,10 +3,10 @@ package main
 import "fmt"
 
 func main() {
-	for i := 5; i > 0; i-- {
-		for j := 1; j <= i; j++ {
-			fmt.Print("*")
-		}
-		fmt.Println()
+	var t [5]float64 = [5]float64{24.0, 25.9, 27.8, 26.9, 26.2}
+
+	for i := 0; i < 5; i++ {
+		//fmt.Println(t[i])
+		fmt.Printf("%03.1f\n", t[i])
 	}
 }
