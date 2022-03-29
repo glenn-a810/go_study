@@ -1,21 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"unsafe"
+)
 
-type Student struct {
-	Age   int
-	No    int
-	Score float64
-}
-
-func PrintStudent(s Student) {
-	fmt.Printf("나이:%d 번호:%d 점수:%.2f\n", s.Age, s.No, s.Score)
+type User struct {
+	Age   int32   // 4바이트
+	Score float64 // 8바이트
 }
 
 func main() {
-	var student = Student{15, 23, 88.2}
-
-	student2 := student
-
-	PrintStudent(student2)
+	user := User{23, 77.2}
+	fmt.Println(unsafe.Sizeof(user)) // 해당 변수의 메모리 공간 크기 반환
 }
