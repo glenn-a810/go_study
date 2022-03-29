@@ -2,27 +2,32 @@ package main
 
 import "fmt"
 
-type House struct { // 구조체 정의
-	Address string
-	Size    int
-	Price   float64
-	Type    string
+type User struct {
+	Name string
+	ID   string
+	Age  int
+}
+
+type VIPUser struct {
+	UserInfo User
+	VIPLevel int
+	Price    int
 }
 
 func main() {
-	//var house House              // 구조체 변수 선언
-	//house.Address = "우주정거장 A810" // 각 필드값 초기화
-	//house.Size = 28
-	//house.Price = 3.5
-	//house.Type = "오피스텔"
-
-	var house House = House{
-		Address: "우주정거장 A810",
-		Price:   3.5,
+	user := User{"오드", "odd", 11}
+	vip := VIPUser{
+		User{"루이", "luwie", 12},
+		3,
+		250,
 	}
 
-	fmt.Println("주소 : ", house.Address)
-	fmt.Printf("크기 : %d평\n", house.Size)
-	fmt.Printf("가격 : %.2f억원\n", house.Price)
-	fmt.Println("타입 : ", house.Type)
+	fmt.Printf("유저: %s ID: %s 나이: %d\n", user.Name, user.ID, user.Age)
+	fmt.Printf("VIP 유저: %s ID: %s 나이: %d VIP 레벨: %d VIP 가격: %d만원\n",
+		vip.UserInfo.Name,
+		vip.UserInfo.ID,
+		vip.UserInfo.Age,
+		vip.VIPLevel,
+		vip.Price,
+	)
 }
