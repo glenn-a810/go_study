@@ -17,10 +17,8 @@ func main() {
 	//house.Type = "오피스텔"
 
 	var house House = House{
-		"우주정거장 A810",
-		28,
-		3.5,
-		"오피스텔",
+		Address: "우주정거장 A810",
+		Price:   3.5,
 	}
 
 	fmt.Println("주소 : ", house.Address)
