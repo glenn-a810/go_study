@@ -9,7 +9,7 @@ type User struct {
 }
 
 type VIPUser struct {
-	UserInfo User
+	User
 	VIPLevel int
 	Price    int
 }
@@ -24,9 +24,9 @@ func main() {
 
 	fmt.Printf("유저: %s ID: %s 나이: %d\n", user.Name, user.ID, user.Age)
 	fmt.Printf("VIP 유저: %s ID: %s 나이: %d VIP 레벨: %d VIP 가격: %d만원\n",
-		vip.UserInfo.Name,
-		vip.UserInfo.ID,
-		vip.UserInfo.Age,
+		vip.Name,
+		vip.ID,
+		vip.Age,
 		vip.VIPLevel,
 		vip.Price,
 	)
