@@ -2,14 +2,20 @@ package main
 
 import "fmt"
 
+type Data struct {
+	value int
+	data  [200]int
+}
+
+func ChangeData(arg Data) { // 매개변수로 Data를 받음
+	arg.value = 999     // arg 데이터를 변경
+	arg.data[100] = 999 // arg 데이터를 변경
+}
+
 func main() {
-	var a int = 10
-	var b int = 20
+	var data Data
 
-	var p1 *int = &a
-	var p2 *int = &a
-	var p3 *int = &b
-
-	fmt.Printf("p1 == p2 : %v\n", p1 == p2)
-	fmt.Printf("p2 == p3 : %v\n", p2 == p3)
+	ChangeData(data) // 인수로 data를 넣음
+	fmt.Printf("value = %d\n", data.value)
+	fmt.Printf("data[100] = %d\n", data.data[100])
 }
