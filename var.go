@@ -4,11 +4,11 @@ import "fmt"
 
 func main() {
 	str1 := "Hello"
-	str2 := "World"
+	str2 := "Hell"
+	str3 := "Hello"
 
-	str3 := str1 + " " + str2
-	fmt.Println(str3)
-
-	str1 += " " + str2
-	fmt.Println(str1)
+	fmt.Printf("%s == %s : %v\n", str1, str2, str1 == str2)
+	fmt.Printf("%s != %s : %v\n", str1, str2, str1 != str2)
+	fmt.Printf("%s == %s : %v\n", str1, str3, str1 == str3)
+	fmt.Printf("%s != %s : %v\n", str1, str3, str1 != str3)
 }
