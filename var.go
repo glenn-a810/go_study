@@ -1,13 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+	"unsafe"
+)
 
 func main() {
 	var str string = "Hello World"
 	var slice []byte = []byte(str)
 
-	slice[2] = 'a'
+	stringHeader := (*reflect.StringHeader)(unsafe.Pointer(&str))
+	sliceHeader := (*reflect.StringHeader)(unsafe.Pointer(&slice))
 
-	fmt.Println(str)
-	fmt.Printf("%s\n", slice) // str과 slice가 다른 메모리 주소를 가리키고 있음
+	fmt.Printf("str:\t%x\n", stringHeader.Data)
+	fmt.Printf("slice:\t%x\n", sliceHeader.Data)
 }
