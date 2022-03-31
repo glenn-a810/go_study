@@ -1,12 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+	"unsafe"
+)
 
 func main() {
-	str1 := "안녕하세요. 한글 문자열입니다."
+	str1 := "Hello World"
 	str2 := str1
 
-	fmt.Printf(str1)
-	fmt.Printf("\n")
-	fmt.Printf(str2)
+	stringHeader1 := (*reflect.StringHeader)(unsafe.Pointer(&str1)) // Data값 추출
+	stringHeader2 := (*reflect.StringHeader)(unsafe.Pointer(&str2)) // Data값 추출
+
+	fmt.Println(stringHeader1)
+	fmt.Println(stringHeader2)
 }
