@@ -3,9 +3,9 @@ package main
 import "fmt"
 
 func main() {
-	str1 := "가나다라마"
-	str2 := "abcde"
+	str := "Hello World"
+	runes := []rune{72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100} // Hello World 문자코드 배열
 
-	fmt.Printf("len(str1) = %d\n", len(str1))
-	fmt.Printf("len(str2) = %d\n", len(str2))
+	fmt.Println(str)
+	fmt.Println(string(runes))
 }
