@@ -3,9 +3,9 @@ package main
 import "fmt"
 
 func main() {
-	str := "Hello World"
-	runes := []rune{72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100} // Hello World 문자코드 배열
+	str := "Hello 월드"    // 한영 섞인 문자열
+	runes := []rune(str) // []rune으로 타입변환
 
-	fmt.Println(str)
-	fmt.Println(string(runes))
+	fmt.Printf("len(str) = %d\n", len(str))     // string 타입 길이
+	fmt.Printf("len(runes) = %d\n", len(runes)) // []rune 타입 길이
 }
