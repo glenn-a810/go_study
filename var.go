@@ -3,9 +3,9 @@ package main
 import "fmt"
 
 func main() {
-	var char rune = '한'
+	str1 := "가나다라마"
+	str2 := "abcde"
 
-	fmt.Printf("%T\n", char) // 타입 출력
-	fmt.Println(char)        // char의 값 출력
-	fmt.Printf("%c\n", char) // 문자 출력
+	fmt.Printf("len(str1) = %d\n", len(str1))
+	fmt.Printf("len(str2) = %d\n", len(str2))
 }
