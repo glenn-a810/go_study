@@ -3,10 +3,12 @@ package main
 import "fmt"
 
 func main() {
-	str1 := "Hello\tWorld\n" // ""로 묶으면 특수문자가 동작함
+	poet1 := "죽는 날까지 하늘을 우러러\n한 점 부끄럼이 없기를,\n잎새에 이는 바람에도\n나는 괴로워했다.\n" // ""는 줄바꿈 하려면 \n써야함
+	poet2 := `죽는 날까지 하늘을 우러러
+한 점 부끄럼이 없기를,
+잎새에 이는 바람에도
+나는 괴로워했다.` // ``는 특수문자 띄어쓰기 다 출력함
 
-	str2 := `Go is "awesome"!\nGo is simple and\t'powerful'` //``로 묶으면 특수문자가 동작하지 않음
-
-	fmt.Println(str1)
-	fmt.Println(str2)
+	fmt.Println(poet1)
+	fmt.Println(poet2)
 }
