@@ -1,10 +1,10 @@
 package main
 
 import (
+	"GO/usepkg/custompkg"
 	"fmt"
 	"github.com/guptarohit/asciigraph"
 	"github.com/tuckersGo/musthaveGo/ch16/expkg"
-	"usepkg/custompkg"
 )
 
 func main() {
