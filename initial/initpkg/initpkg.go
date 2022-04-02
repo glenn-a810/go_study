@@ -9,7 +9,7 @@ var (
 	d = 3     // d값은 초기화가 끝난 뒤 6
 )
 
-func init() {
+func init() { // 모든 전역 변수들이 초기화 되고나서 init()함수 호출
 	d++
 	fmt.Println("init function", d)
 }
