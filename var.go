@@ -20,3 +20,13 @@ func main() {
 //var slice = []int{1,2,3} // 슬라이스 선언
 //
 //var slice = make([]int, 3) // 길이 3개짜리 int 슬라이스
+
+//var slice = []int{1, 2, 3}
+//
+//for i:=0;i<len(slice);i++{
+//	slice[i]+=10
+//}
+//
+//for i,v:=range slice{
+//	slice[i]=v*2
+//}
