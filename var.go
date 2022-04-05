@@ -3,9 +3,10 @@ package main
 import "fmt"
 
 func main() {
-	slice1 := make([]int, 3, 5) // len:3 cap:5 슬라이스
+	slice1 := []int{1, 2, 3}
 
 	slice2 := append(slice1, 4, 5)
+
 	fmt.Println("slice1:", slice1, len(slice1), cap(slice1))
 	fmt.Println("slice2:", slice2, len(slice2), cap(slice2))
 
