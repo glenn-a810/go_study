@@ -2,21 +2,22 @@ package main
 
 import "fmt"
 
-func changeArray(array2 [5]int) { // 배열을 받아서 세번째 값 변경
-	array2[2] = 200
-}
-
-func changeSlice(slice2 []int) { // 슬라이스를 받아서 세번째 값 변경
-	slice2[2] = 200
-}
-
 func main() {
-	array := [5]int{1, 2, 3, 4, 5}
-	slice := []int{1, 2, 3, 4, 5}
+	slice1 := make([]int, 3, 5) // len:3 cap:5 슬라이스
 
-	changeArray(array)
-	changeSlice(slice)
+	slice2 := append(slice1, 4, 5)
+	fmt.Println("slice1:", slice1, len(slice1), cap(slice1))
+	fmt.Println("slice2:", slice2, len(slice2), cap(slice2))
 
-	fmt.Println("array:", array)
-	fmt.Println("slice:", slice)
+	slice1[1] = 100 // slice2까지 바뀜
+
+	fmt.Println("After change second element")
+	fmt.Println("slice1:", slice1, len(slice1), cap(slice1))
+	fmt.Println("slice2:", slice2, len(slice2), cap(slice2))
+
+	slice1 = append(slice1, 500) // slice2까지 바뀜
+
+	fmt.Println("After append 500")
+	fmt.Println("slice1:", slice1, len(slice1), cap(slice1))
+	fmt.Println("slice2:", slice2, len(slice2), cap(slice2))
 }
